@@ -14,3 +14,9 @@ then
      else
         echo "mysql is installed successfully"
         fi
+ yum install nginx -y
+ if [ $? -ne 0 ]
+ then
+     echo "installing nginx is failed"
+     else
+         echo "nginx is installed successfully"
