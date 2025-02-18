@@ -5,3 +5,4 @@
 DATE=$(date)
 
 echo "the date and time is:$DATE"
+echo "the script started time of execution is :$DATE"
