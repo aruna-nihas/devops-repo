@@ -7,4 +7,4 @@ then
    else
        echo "u r a root user"
        fi
- yum install sql -y
+ yum install mysql -y
