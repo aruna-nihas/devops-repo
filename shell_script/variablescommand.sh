@@ -2,6 +2,6 @@
 # we run a command by using a variable assigned to that command
 
 #!/bin/bash
-DATE=(date)
+DATE=$(date)
 
 echo "the date and time is:$DATE"
