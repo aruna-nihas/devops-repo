@@ -18,7 +18,7 @@ then
        echo "$2 installed successfully...."
 fi
 }
- yum install mysql -y & >>$LOGFILE
+ yum install mysql -y &>> $LOGFILE
  VALIDATE $? "MYSQL"
- yum install nginx -y & >>$LOGFILE
+ yum install nginx -y &>> $LOGFILE
  VALIDATE $? "nginx "
