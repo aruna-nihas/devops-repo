@@ -10,12 +10,12 @@ then
 VALIDATE(){
 if [ $1 -ne 0 ]
 then 
-    echo "installing $2 is failed"
+    echo " $2 failed...."
     else
-       echo "$2 is installed successfully"
+       echo "$2  successfully...."
 fi
 }
  yum install mysql -y
- VALIDATE $? "MYSQL is installing...."
+ VALIDATE $? "MYSQL"
  yum install nginx -y
- VALIDATE $? "nginx is installing..."
+ VALIDATE $? "nginx "
