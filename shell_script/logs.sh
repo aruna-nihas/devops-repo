@@ -1,7 +1,7 @@
 #!/bin/bash
 ID=$(id -u)
 TIMESTAMP=$(date +%F-%H:%M:%S)
-LOGFILE="/tmp/$0:$TIMESTAMP.log"
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
 if [ $ID -ne 0 ]
 then 
    echo "ERROR:: Plz use root user"
