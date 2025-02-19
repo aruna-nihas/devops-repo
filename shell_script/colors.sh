@@ -2,7 +2,7 @@
 ID=$(id -u)
 if [ $ID -ne 0 ]
 then 
-    echo -e "\e[31m ERROR::e[0m plz use root user"
+    echo -e "\e[31m ERROR::\e[0m plz use root user"
     exit 1
     else
         echo -e "e\[32m u r a root user"
