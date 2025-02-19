@@ -1,7 +1,8 @@
 #!/bin/bash
 ID=$(id -u)
 TIMESTAMP=$(date +%F-%H:%M:%S)
-LOGFILE="/tmp/$0-$TIMESTAMP.log"
+
+LOGFILE="tmp/$0-$TIMESTAMP.log"
 if [ $ID -ne 0 ]
 then 
    echo "ERROR:: Plz use root user"
@@ -17,7 +18,7 @@ then
        echo "$2 installed successfully...."
 fi
 }
- yum install mysql -y &>> $LOGFILE
+ yum install mysql -y & >>$LOGFILE
  VALIDATE $? "MYSQL"
- yum install nginx -y &>> $LOGFILE
+ yum install nginx -y & >>$LOGFILE
  VALIDATE $? "nginx "
