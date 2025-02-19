@@ -12,7 +12,7 @@ if [ $1 -ne 0 ]
 then 
     echo " $2 installing is failed...."
     else
-       echo "$2  installed successfully...."
+       echo "$2 installed successfully...."
 fi
 }
  yum install mysql -y
