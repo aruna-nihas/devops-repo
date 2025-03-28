@@ -1,5 +1,5 @@
 #!/bin/bash/
-if[ uid -ne 0 ]
+if [ uid -ne 0 ]
 then
     echo"ERROR::plz use root user"
     else
