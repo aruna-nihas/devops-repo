@@ -7,7 +7,7 @@ then
     else
         echo "u r a root user"
 fi
-cp mongodb.repo /etc/yum.repos.d/mongo.repo
+cp mongo.repo /etc/yum.repos.d/mongo.repo
 
 dnf install mongodb-org -y 
 
