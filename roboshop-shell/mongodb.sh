@@ -1,20 +1,24 @@
 #!/bin/bash
 ID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then 
-        echo "$2....Failed"
+        echo -e "$2....$R Failed $N"
         else
-            echo "$2....successful"
+            echo "$2....$G successful $N"
     fi
 }
 if [ $ID -ne 0 ]
 then
-    echo "ERROR....Plz use root user"
+    echo -e "$R ERROR....Plz use root user $N"
     exit 1
     else
-        echo "u r a root user"
+        echo -e "$Y u r a root user $N"
 fi
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 
