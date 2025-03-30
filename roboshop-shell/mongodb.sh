@@ -1,6 +1,6 @@
 #!/bin/bash
 ID=$(id -u)
-if [ $ID -ne 0 ]
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then 
@@ -9,6 +9,7 @@ VALIDATE(){
             echo "$2....successful"
     fi
 }
+if [ $ID -ne 0 ]
 then
     echo "ERROR....Plz use root user"
     exit 1
