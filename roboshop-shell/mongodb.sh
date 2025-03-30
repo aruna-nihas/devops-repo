@@ -10,7 +10,7 @@ VALIDATE(){
     then 
         echo -e "$2....$R Failed $N"
         else
-            echo "$2....$G successful $N"
+            echo -e "$2....$G successful $N"
     fi
 }
 if [ $ID -ne 0 ]
