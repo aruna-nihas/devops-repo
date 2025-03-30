@@ -55,7 +55,7 @@ VALIDATE $? "downloading catalogue"
 
 cd /app 
 
-unzip /tmp/catalogue.zip &>> $LOGFILE
+unzip -o /tmp/catalogue.zip &>> $LOGFILE #-o for override
 
 VALIDATE $? "unzipping catalogue"
 
