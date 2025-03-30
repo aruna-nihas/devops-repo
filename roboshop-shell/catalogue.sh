@@ -7,8 +7,7 @@ N="\e[0m"
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 echo -e "$G The script started at $TIMESTAMP $N"
-
-VALIDATE () {
+VALIDATE(){
     if [ $1 -ne 0 ]
     then 
         echo -e "$2....$R Failed $N"
@@ -35,12 +34,17 @@ dnf install nodejs -y &>> $LOGFILE
 
 VALIDATE $? "installing nodejs"
 
-useradd roboshop
+id roboshop
+if [ $? -ne 0 ]
+then
+    useradd roboshop
 
-VALIDATE $?"added roboshop"
-
-
-mkdir /app
+   VALIDATE $?"added roboshop"
+   else
+       echo -e "$Y roboshop user already exist $N"
+fi
+ 
+mkdir -p /app
 
 VALIDATE $? "created app dir"
 
