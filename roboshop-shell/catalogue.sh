@@ -87,7 +87,7 @@ dnf install -y mongodb-mongosh &>> $LOGFILE
 
 VALIDATE $? "installing mongodb"
 
-mongosh --host 172.31.20.214 </app/schema/catalogue.js &>> $LOGFILE
+mongosh --host 172.31.20.214 </app/schema/catalogue.js
 
 VALIDATE $? "updating schema"
 
