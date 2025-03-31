@@ -25,20 +25,24 @@ then
 fi
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 
+VALIDATE $? "copied mangodb repo"
+
 dnf install mongodb-org -y &>> $LOGFILE
 
-VALIDATE $? "mongodb installation"
+VALIDATE $? "Installing MongoDB"
 
 systemctl enable mongod &>> $LOGFILE
 
-VALIDATE $? "enabling mongodb"
+VALIDATE $? "Enabling MongoDB"
 
 systemctl start mongod &>> $LOGFILE
 
-VALIDATE $? "starting mongodb"
+VALIDATE $? "Starting MongoDB"
 
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> $LOGFILE
 
+VALIDATE $? "Remote access to MongoDB"
+
 systemctl restart mongod &>> $LOGFILE
 
-VALIDATE $? "restarting mongodb"
+VALIDATE $? "Restarting MongoDB"
