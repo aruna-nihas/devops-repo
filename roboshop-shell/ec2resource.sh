@@ -8,10 +8,10 @@ do
   echo "Instance Name:$i" 
   if [ $i == "mongodb" ] || [ $i == "mysql" ] || [ $i == "redis" ] || [ $i == "rabbitmq" ]
   then
-      INSTANCES_TYPE="t2.midium"
+      INSTANCES_TYPE="t2.medium"
       else
       INSTANCES_TYPE="t2.micro"
       echo "$i instance is created"
    fi
-      aws ec2 run-instances --image-id $AMI --instance-type $INSTANCES_TYPE --security-group-ids $SG_ID
+      aws ec2 run-instances --image-id $AMI --instance-type $INSTANCES_TYPE --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]"
 done
